@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .logo-circle {
+            background: #bb6065;
+            font-size: 15px;
+        }
+
+        .font-size {
+            font-size: larger;
+            font-weight: 500;
+        }
+
+        .msg {
+            font-size: medium;
+            font-weight: 500;
+        }
+
+        .position-absolute {
+            margin-top: -17px;
+        }
+
+        .text {
+            color: #3373dc;
+        }
+
+        .text:hover {
+            color: #3373dc;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- ============================================== NAVBAR================================================ -->
+    <nav class="navbar navbar-expand-lg d-flex px-sm-2 px-3">
+        <a class="navbar-brand fw-bold ms-md-4 ms-sm-0 d-flex text align-items-center" href="#">
+            <span class="logo-circle p-2 rounded-5 me-2 text-white">MF</span>FormCreator
+        </a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item px-3 m-2 ms-md-4 ms-lg-2"><a class="nav-link" href="#"><i
+                            class="fa-regular fa-file"></i> Forms</a></li>
+                <li class="nav-item px-3 m-2 ms-md-4 ms-lg-2"><a class="nav-link" href="#"><i
+                            class="fa-regular fa-floppy-disk"></i> Save Form</a></li>
+                <li class="nav-item px-3 m-2 ms-md-4 ms-lg-2"><a class="nav-link" href="#"><i
+                            class="fa-solid fa-circle-arrow-down"></i> Download</a></li>
+            </ul>
+            <div class="d-lg-flex d-sm-block ms-sm-3 align-items-center gap-3 ">
+                <p class="m-0 text fw-semibold m-2 ms-md-4 ms-lg-2">Sturat Cochrane</p>
+                <button class="btn btn-light border m-2 ms-md-4 ms-lg-2"><i
+                        class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+            </div>
+        </div>
+    </nav>
+    <!-- ================================================ Msin div================================================= -->
+    <div class="container-fluid border-top">
+        <div class="row">
+            <!-- ===================== Left side div ======================================== -->
+            <div class="col-lg-3 col-md-4 mb-3 border-end p-3">
+                <div class="mb-3 bg-white">
+                    <div class="d-flex border-bottom mb-3 font-size justify-content-around">
+                        <span class="text me-4 border-bottom border-primary">
+                            <i class="fa-solid fa-sliders"></i> Setting
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-palette"></i> Theme
+                        </span>
+                    </div>
+                    <label class="font-size">Form Name</label>
+                    <input type="text" class="form-control mb-1" placeholder="Contact-Business">
+                    <small class="text-secondary">Used to save and identify your form</small>
+                    <hr>
+                    <label class="font-size">Thank You Message</label>
+                    <textarea class="form-control mb-1" rows="5" placeholder="Thanks for contacting us..."></textarea>
+                    <small class="text-secondary">Message to show after the form is sent</small>
+                    <hr>
+                    <label class="font-size">Form Style</label>
+                    <div class="btn-group w-100">
+                        <button class="btn btn-primary rounded-start-5">Default</button>
+                        <button class="btn btn-outline-secondary rounded-end-5">Materialize</button>
+                    </div>
+                    <hr>
+                    <label class="font-size">Submit Button Text</label>
+                    <input type="text" class="form-control mb-1" placeholder="Send Message">
+                    <small class="text-secondary">Text used on the submit button</small>
+                    <hr>
+                    <label class="font-size">Submit Button Position</label>
+                    <div class="btn-group w-100 ">
+                        <button class="btn btn-outline-secondary rounded-start-5"><i
+                                class="fa-solid fa-align-left"></i></button>
+                        <button class="btn btn-primary"><i class="fa-solid fa-align-justify"></i></button>
+                        <button class="btn btn-outline-secondary"><i class="fa-solid fa-align-center"></i></button>
+                        <button class="btn btn-outline-secondary rounded-end-5"><i
+                                class="fa-solid fa-align-right"></i></button>
+                    </div>
+                    <hr>
+                    <a href="#" class="text m-0 p-0">Version: 1.3.1</a>
+                </div>
+            </div>
+            <!-- ========================================= main Form div===================================== -->
+            <div class="col-lg-9 col-md-8 mb-3 p-lg-0 ps-lg-3 p-3 ">
+                <div class="d-flex gap-5 border-bottom my-3 ">
+                    <span class="text font-size border-bottom border-primary">
+                        <i class="fa-solid fa-pen-to-square"></i> Field Editor
+                    </span>
+                    <span class="font-size">
+                        <i class="fa-solid fa-eye"></i> Preview
+                    </span>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-9 p-0 pe-lg-2 my-3">
+                            <form class=" position-relative" id="form">
+                                <div class="mb-3">
+                                    <label class="form-label">Name</label>
+                                    <input class="form-control" type="text" id="username">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input class="form-control" type="email" id="userEmail">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Company Name</label>
+                                    <input class="form-control" type="text" id="company">
+                                </div>
+                                <!-- Radio Group -->
+                                <div class="my-2">
+                                    <label class="text-black-50 fs-4 fw-semibold">Preferred ContactMethod</label>
+                                    <div>
+                                        <input type="radio" name="contactMethod" class="mt-2" value="Email"> Email
+                                        <input type="radio" name="contactMethod" class="ms-5 mt-2" value="Phone"> Phone
+                                        <input type="radio" name="contactMethod" class="ms-5 mt-2" value="Whatsapp">
+                                        WhatsApp
+                                    </div>
+                                </div>
+                                <!-- Checkbox Group -->
+                                <div class="mb-2" id="option">
+                                    <label class="text-black-50 fs-4 fw-semibold">Services Needed</label>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="service" value="Web Design"> Web Design
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="service" value="Marketing"> Marketing
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="service" value="Branding"> Branding
+                                    </div>
+                                </div>
+                                <!-- Budget (Select) -->
+                                <div class="mb-2">
+                                    <label class="text-black-50 fs-4 fw-semibold">Estimated Budget</label>
+                                    <select class="form-select" id="budget">
+                                        <option>Select Budget</option>
+                                        <option>$100 - $500</option>
+                                        <option>$500 - $1000</option>
+                                        <option>$1000+</option>
+                                    </select>
+                                </div>
+                                <p class="text-secondary small m-0">You must agree to our terms andconditions</p>
+                                <div class="d-flex align-items-center gap-1">
+                                    <input type="checkbox">
+                                    <label>Tick here to agree</label>
+                                </div>
+                                <div class="text-center my-3">
+                                    <input type="submit" value="Submit" class="btn btn-outline-primary fs-5">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-lg-3 col-md-12 p-0">
+                            <div class="border">
+                                <div class="py-2 border-bottom px-3">
+                                    <i class="fa-solid pe-2 fa-bars-progress"></i>
+                                    Text Field
+                                </div>
+                                <div class="py-2 border-bottom px-3">
+                                    <i class="fa-solid pe-2 fa-file-lines"></i>
+                                    Text Area
+                                </div>
+                                <div class="py-2 border-bottom px-3">
+                                    <i class="fa-solid pe-2 fa-clipboard-list"></i>
+                                    Select
+                                </div>
+                                <div class="py-2 border-bottom px-3">
+                                    <i class="fa-solid pe-2 fa-list-check"></i>
+                                    Checkbox Group
+                                </div>
+                                <div class="py-2 border-bottom px-3">
+                                    <i class="fa-solid pe-2 fa-list"></i>
+                                    Radio Group
+                                </div>
+                                <div class="py-2 border-bottom px-3">
+                                    <i class="fa-solid pe-2 fa-hashtag"></i>
+                                    Number
+                                </div>
+                                <div class="py-2 border-bottom px-3">
+                                    <i class="fa-regular pe-2 fa-calendar"></i>
+                                    Date Field
+                                </div>
+                                <div class="py-2 border-bottom px-3">
+                                    <i class="fa-solid pe-2 fa-upload"></i>
+                                    File Upload
+                                </div>
+                                <div class="py-2 border-bottom px-3">
+                                    <i class="fa-solid pe-2 fa-heading"></i>
+                                    Header
+                                </div>
+                                <div class="py-2 px-3">
+                                    <i class="fa-solid pe-2 fa-paragraph"></i>
+                                    Paragraph
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let isValid = true;
+            document.querySelectorAll("small.err-msg").forEach(s => s.remove());
+
+            const selectedRadio = document.querySelector('input[name="contactMethod"]:checked');
+            const contactMethod = selectedRadio ? selectedRadio.value : "";
+
+            // Checkboxes div js
+            const services = [...document.querySelectorAll("input.service:checked")].map(cb => cb.value);
+
+            const data = {
+                name: document.getElementById("username").value.trim(),
+                email: document.getElementById("userEmail").value.trim(),
+                company: document.getElementById("company").value.trim(),
+                services: services,
+                contactMethod: contactMethod,
+                budget: document.getElementById("budget").value
+            };
+
+            // --------============= VALIDATION ===========================---------
+            if (data.name === "") {
+                showError("username", "Enter Username");
+                isValid = false;
+            } else if (data.name.length < 3) {
+                showError("username", "Enter at least 3 characters");
+                isValid = false;
+            } else if (!/^[a-zA-Z\s]+$/.test(data.name)) {
+                showError("username", "Name should contain only letters");
+                isValid = false;
+            }
+            
+            if (data.email === "") {
+                showError("userEmail", "Enter Email");
+                isValid = false;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+                showError("userEmail", "Enter valid Email");
+                isValid = false;
+            }
+
+            if (data.company === "") {
+                showError("company", "Enter company name");
+                isValid = false;
+            }
+            if (data.services.length === 0) {
+                alert("Please select at least one service");
+                isValid = false;
+            }
+            if (data.contactMethod === "") {
+                alert("Please select contact method");
+                isValid = false;
+            }
+
+            if (isValid) {
+                function save(data) {
+                    let record = JSON.parse(localStorage.getItem('formData'));
+                    if (!Array.isArray(record)) {
+                        record = [];
+                    }
+                    data.id = record.length + 1;
+                    record.push(data);
+                    localStorage.setItem('formData', JSON.stringify(record));
+                }
+                save(data)
+                console.log("Saved Data:", data);
+                alert("Form submitted successfully");
+                form.reset();
+                window.location.href = 'ouput.html'
+            }
+        });
+        // show error function below the input
+        function showError(inputId, message) {
+            const small = document.createElement("small");
+            small.className = "text-danger err-msg";
+            small.innerText = message;
+            document.getElementById(inputId).parentElement.appendChild(small);
+        }
+    </script>
+</body>
+</html>
